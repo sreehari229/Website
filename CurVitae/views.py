@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Education
 
 def index(request):
+    education_details = Education.objects.all().values()
     data = {
         "name" : "Sreehari S",
 
@@ -27,6 +29,9 @@ def index(request):
             "MySQL" : 80,
             "Git\Github" : 90,
         },
+
+        "education" : education_details,
               
     }
-    return render(request, 'CurVitae/index.html', data)
+
+    return render(request, 'CurVitae/education.html', data)
