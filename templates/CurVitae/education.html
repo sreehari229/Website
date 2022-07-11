@@ -5,6 +5,7 @@
     <h2 class="h3 mb-4">Education</h2>
     <div class="timeline">
       {% for edu in education %}
+      {% if edu.display %}
       <div class="timeline-card timeline-card-success card shadow-sm">
         <div class="card-body">
           <div class="h5 mb-1">{{ edu.course }} <span class="text-muted h6">{{ edu.institution_name }}</span></div>
@@ -12,6 +13,7 @@
           <div><span class="text-muted h6">{{ edu.score }}</span></div>
         </div>
       </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
