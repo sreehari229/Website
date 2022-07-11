@@ -1,6 +1,8 @@
+import imp
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Education
+from .models import Projects
 
 def index(request):
     education_details = Education.objects.all().values()
@@ -33,5 +35,13 @@ def index(request):
         "education" : education_details,
               
     }
-
     return render(request, 'CurVitae/education.html', data)
+
+
+def projects(request):
+    project_details = Projects.objects.all().values()
+    data = {
+        "projects" : project_details,
+        
+    }
+    return render(request, "Projects/projects.html", data)

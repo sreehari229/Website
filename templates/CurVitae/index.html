@@ -65,15 +65,18 @@
         <div class="cover-bg p-3 p-lg-4 text-white">
           <div class="row">
             <div class="col-lg-4 col-md-5">
-              <div class="avatar hover-effect bg-white shadow-sm p-1"><img src="{% static 'CurVitae/sreehari.jpg' %}" width="200"
+              <div class="avatar hover-effect bg-white shadow-sm p-1">
+                <img src="{% static 'CurVitae/sreehari.jpg' %}" width="200"
                   height="200" /></div>
-            </div>
+              </div>
             <div class="col-lg-8 col-md-7 text-center text-md-start">
               <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0">{{ name }}</h2>
               <p data-aos="fade-left" data-aos-delay="100">Pursuing Masters in Computer Science</p>
               <div class="d-print-none" data-aos="fade-left" data-aos-delay="200">
                 <a class="btn btn-success shadow-sm mt-1" href="{% static 'CurVitae/CV.pdf' %}" target="_blank">Download CV</a>
+                <a class="btn btn-secondary shadow-sm mt-1" href="{% url 'projects' %}">Projects</a>
               </div>
+              
             </div>
           </div>
         </div>
