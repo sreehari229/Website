@@ -16,9 +16,10 @@ class Education(models.Model):
 class Projects(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
+    is_source_code = models.BooleanField(default=True)
     link = models.TextField(default=' - ')
     display = models.BooleanField()
-    image = models.ImageField(upload_to='projects_images', default='/static/Projects/assets/img/Portfolio/default.jpg', null=True, blank=True)
+    image = models.CharField(max_length=200,default='default.jpg')
     is_website = models.BooleanField(default=False)
     website_link = models.TextField(default=' ')
     tech_used = models.TextField(default=' ')
