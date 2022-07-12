@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 
@@ -17,6 +18,10 @@ class Projects(models.Model):
     description = models.TextField()
     link = models.TextField(default=' - ')
     display = models.BooleanField()
+    image = models.ImageField(upload_to='projects_images', default='/static/Projects/assets/img/Portfolio/default.jpg', null=True, blank=True)
+    is_website = models.BooleanField(default=False)
+    website_link = models.TextField(default=' ')
+    tech_used = models.TextField(default=' ')
 
     def __str__(self):
         return self.name
